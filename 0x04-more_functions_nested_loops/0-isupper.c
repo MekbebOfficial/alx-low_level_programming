@@ -1,24 +1,23 @@
-julien@ubuntu:~/0x04$ cat 1-main.c 
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
+* _isupper - A function that checks for uppercase character.
+* @c: An input character
+* Return: 1 if c is uppercase or 0 otherwise
+*/
+int _isupper(int c)
 {
-    char c;
+char uppercase = 'A';
+int isupper = 0;
 
-    c = '0';
-    printf("%c: %d\n", c, _isdigit(c));
-    c = 'a';
-    printf("%c: %d\n", c, _isdigit(c));
-    return (0);
+for (; uppercase <= 'Z'; uppercase++)
+{
+if (c == uppercase)
+{
+isupper = 1;
+break;
 }
-julien@ubuntu:~/0x04$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-isdigit.c -o 1-isdigit
-julien@ubuntu:~/0x04$ ./1-isdigit 
-0: 1
-a: 0
-julien@ubuntu:~/0x04$ 
+}
+
+return (isupper);
+}
